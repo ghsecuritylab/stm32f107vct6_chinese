@@ -11,7 +11,7 @@ Here are the list of things I found during some sort of hobby grade reverse engi
 * D4    - PE13
 * D5    - PE15
 
-LED is connecte to 3.3V source via current limiting resistor. 
+LED is connected to 3.3V source via current limiting resistor. 
 Setting GPIO LOW turns on the LED.
 
 # Ethernet
