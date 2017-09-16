@@ -24,7 +24,7 @@ The glitch is MDIO isn't connected to PA2. This won't normally prevent you from 
 
 As shown in the picture, just connect R42 ( MDIO Pull UP) to PA2 pin header.
 
-One funny thing was there was a STM32CubeMX problem with properly working PHY. With original CubeMX code (latest version as of Sep/16/2017), if the boards boots up with ethernet link down, the ethernet simple doesn't work. It turned out that the problem was caused by not calling netif_set_up()/netif_set_down() when handling link up/down events. Again fix is quite simple. Just a look at ethernetif_set_link() in Src/ethernetif.c
+One funny thing was there was a STM32CubeMX problem with properly working PHY. With original CubeMX code (latest version as of Sep/16/2017), if the boards boots up with ethernet link down, the ethernet simple doesn't work. It turned out that the problem was caused by not calling netif_set_up()/netif_set_down() when handling link up/down events. Again fix is quite simple. Just take a look at ethernetif_set_link() in Src/ethernetif.c
 
 The PHY(DP83848IVV) is connected via RMII. 50Mhz clock to the PHY is provided via MCO pin of STM32F107VCT6.
 And here is the list of pin assignments for ethernet connection
