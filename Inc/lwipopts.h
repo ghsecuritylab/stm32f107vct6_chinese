@@ -145,6 +145,9 @@
 #define LWIP_DBG_MIN_LEVEL LWIP_DBG_MASK_LEVEL
 /*-----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
+#define ETHARP_SUPPORT_VLAN   1
+#define LWIP_HOOK_VLAN_SET        my_custom_vlan_set_hook
+#define LWIP_HOOK_VLAN_CHECK      my_custom_vlan_check_hook
 
 /* USER CODE END 1 */
 

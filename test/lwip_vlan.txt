@@ -1,0 +1,24 @@
+a) outgoing
+
+    implement LWIP_HOOK_VLAN_SET() to get vlan ID for a specific interface or whatever
+
+
+b) incoming
+
+  implement LWIP_HOOK_VLAN_CHECK(netif, ethhdr, vlan)
+    decide whether a packet should be accepted or dropped
+
+  implement(optionally) ETHARP_VLAN_CHECK_FN(ethaddr, vlan)
+    decide whether a packet should be accepted or dropped
+
+  implement(optionally) ETHARP_VLAN_CHECK as VALAN ID (uint16_t) field
+    decide whether a packet should be accepted or dropped
+
+
+================================
+To sum it up,
+
+a) define ETHARP_SUPPORT_VLAN
+b) define LWIP_HOOK_VLAN_SET your_custom_vlan_set_hook(netif, p, src, dst, eth_type)
+c) define LWIP_HOOK_VLAN_CHECK your_custom_vlan_check_hook(netif, ethhdr, vlan)
+

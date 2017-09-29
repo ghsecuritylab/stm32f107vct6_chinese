@@ -777,6 +777,23 @@ __weak void ethernetif_notify_conn_changed(struct netif *netif)
 #endif /* LWIP_NETIF_LINK_CALLBACK */
 
 /* USER CODE BEGIN 9 */
+s32_t
+my_custom_vlan_set_hook(struct netif* netif, struct pbuf* pbuf,
+    const struct eth_addr* src, const struct eth_addr* dst, u16_t eth_type)
+{
+  // FIXME
+  // vlan ID 1
+  return 1;
+}
+
+s32_t
+my_custom_vlan_check_hook(struct netif* netif, struct eth_hdr* ethhdr,
+    struct eth_vlan_hdr* vlan_hdr)
+{
+  // FIXME
+  // now accept everythng
+  return 1;
+}
 
 /* USER CODE END 9 */
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
